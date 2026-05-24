@@ -1,0 +1,36 @@
+﻿  
+.auto-style6 {
+            width: 63%;
+            height: 181px;
+            background-color: #FFFFFF;
+        }
+        .auto-style7 {
+            width: 271px;
+        }
+.ff {
+    margin-top:500px;
+    width: 1309px;
+    height: 23px;
+    position:absolute;
+    top: 136px;
+    left: 23px;
+}
+        .auto-style8 {
+            width: 315px;
+        }
+        .auto-style9 {
+            width: 636px;
+        }
+        #footer {
+    font-size:26px;
+    flex-align:center;
+    
+    margin-top:60%;
+}
+        .img {
+    position:absolute;
+    height:58px;
+    top: 16px;
+    left: 16px;
+    width: 70px;
+}

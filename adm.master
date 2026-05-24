@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 103%;
+            background-color: #FFCC66;
+            height: 128px;
+        }
+        .auto-style4 {
+            width: 211px;
+            background-color: #FF0000;
+        }
+        .auto-style6 {
+            width: 276px;
+            background-color: #FF0000;
+        }
+        .auto-style8 {
+            width: 298px;
+            background-color: #FF0000;
+        }
+        .auto-style10 {
+            background-color: #FF0000;
+        }
+        .graph {
+            float:left;
+            font-size: 35px;
+            color: white;
+            flex-align: center;
+            height: 40px;
+            width: 1167px;
+        }
+        .auto-style11 {
+            height: 81px;
+            background-color: #0000FF;
+        }
+        .auto-style12 {
+            width: 165px;
+            background-color: #FF0000;
+        }
+        body {
+            background-image:url('star.jpg');
+            background-repeat:no-repeat;
+        }
+    </style>
+</head>
+<body style="margin-top: 14px">
+    <form id="form1" runat="server">
+    <div>
+        
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style11" colspan="5">
+                    <asp:Image ID="Image1" runat="server" Height="65px" ImageUrl="~/pinterest.png" Width="121px" />
+&nbsp;<asp:Label ID="Label1" runat="server" Font-Size="45pt" Text="Social Networking  Profesional Site"></asp:Label>
+                </td>
+                </tr>
+            <tr>
+                <td class="auto-style6"><a  href="ManageUser.aspx"> manageuser</a> </td>
+                <td class="auto-style4"><a href="Manage_Company.aspx">Manage Company</a></td>
+                <td class="auto-style12"><a href="NotificationSendAdmin.aspx">Notification send</a></td>
+                <td class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="changepassword.aspx?UT=Admin">Change Passwored</a></td>
+                <td class="auto-style10"><a href="logout.aspx">LogOut</a></td>
+            </tr>
+        </table>
+        
+    </div>
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+    </form>
+</body>
+</html>

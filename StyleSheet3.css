@@ -1,0 +1,133 @@
+﻿/*.i9 {
+    display:block;
+}
+    .i9:hover {
+         background-color:green;
+        opacity:.8;
+    }
+.i10 {
+    display:block;
+}
+    .i10:hover {
+         background-color:green;
+        opacity:.8;
+    }
+.i11 {
+
+}
+    .i11:hover {
+         background-color:green;
+        opacity:.8;
+    }*/
+.i1 {
+    
+   position:absolute;
+    top: 15px;
+    left: 16px;
+    height: 62px;
+    width: 100px;
+}
+
+.i3 {
+    position: absolute;
+    top: 19px;
+    left: 455px;
+    height: 48px;
+    border:2px solid white;
+    border-radius:10px;
+    background-color:blue;
+    font-size:large;
+    right: 733px;
+}
+    .i3:hover {
+        background-color:red;
+    }
+.i4 {
+    position: absolute;
+    top: 27px;
+    left: 608px;
+    bottom: 482px;
+    height: 29px;
+    margin-top: 1px;
+}
+.i5 {
+    position: absolute;
+    top: 36px;
+    left: 929px;
+    height: 23px;
+    width: 49px;
+    margin-top: 0px;
+}
+.i6 {
+    position: absolute;
+}
+.i7 {
+    position:absolute;
+    top: 23px;
+    left: 786px;
+    bottom: 477px;
+    width: 37px;
+    opacity:.5;
+    margin-top: 0px;
+    background-color: #333333;
+}
+.i8 {
+    position:absolute;
+    top: 30px;
+    left: 682px;
+    height: 28px;
+    width: 76px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size:x-large;
+    color: #FFFFFF;
+}
+.i9 {
+    position:absolute;
+    top: 31px;
+    left: 841px;
+    height: 27px;
+    width: 70px;
+    font-size:x-large;
+    color: #FFFFFF;
+}
+.i10 {
+    position: absolute;
+    top: 35px;
+    left: 1003px;
+    font-size:x-large;
+    color: #FFFFFF;
+    width: 93px;
+    height: 25px;
+    }
+.i11 {
+    position: absolute;
+    font-size:x-large;
+    top: 60px;
+    left: 1159px;
+    top: 38px;
+    height: 7px;
+    width: 72px;
+    bottom: 469px;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+ #footer {
+    font-size:26px;
+    flex-align:center;
+    color:white;
+}
+.i12 {
+    position:absolute;
+    top: -32px;
+    left: 78px;
+    height: 48px;
+    width: 67px;
+    border-radius:50px;
+    margin-top: 0px;
+}
+
+.i3 {
+    border-radius:50px;
+    color: #FFFFFF;
+}        

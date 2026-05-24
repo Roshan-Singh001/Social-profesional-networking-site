@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="clients.master.cs" Inherits="clients" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <title></title>
+      
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+     <link rel="stylesheet" type="text/css" href="StyleSheet3.css" />
+    <style type="text/css">
+        #loading{
+background-image:url('https://loading.io/spinners/comets/index.comet-spinner.svg');
+  background-repeat:no-repeat;
+  background-position:center;
+  width:90%;
+
+  height:100%;
+}
+        body {
+            background-image:url('pa3.jpg');
+            margin:0;
+	 padding:0;
+     height:auto;
+     width:92%;
+     background-position:center;
+	 background-size:cover;
+     background-repeat:no-repeat;
+	 background-position:center;
+	 font-family:sams-serif;
+
+        }
+       .auto-style1 tr td{
+    display:block;
+            background-color: #3333FF;
+        }
+   .auto-style1 tr td:hover 
+   {
+        background-color:green;
+        opacity:.8;
+    }
+        .i2{
+    position: absolute;
+    
+    top: 14px;
+    left: 158px;
+    border: 1px solid blue;
+    border-radius:15px;
+    font-size:18px;
+            right: 873px;
+        }
+    .i2:hover {
+        border:2px solid green;
+    }
+        
+        .auto-style1 {
+            background-color:#000000;
+            opacity:.8;
+            width: 109%;
+            height: 62px;
+        }
+        
+        .auto-style2 {
+            height: 76px;
+        }
+*{
+margin:0px;
+padding:0px;
+font-family:sans-serif;
+}
+#sidebar{
+position:fixed;
+width:200px;
+height:100%;
+background-color:orange;
+left:1475px;
+top:90px;
+
+transition:all 700ms linear;
+}
+#sidebar ul li{
+color:rgb(230,230,230,.9);
+list-style:none;
+border-bottom:1px solid rgba(100,100,100,.3);
+padding:15px; 10px;
+}
+ ul li:hover
+{
+ display:block;
+ background:green;
+ opacity:.8;
+}
+.toggle-btn{
+position:absolute;
+left:1270px;
+top:30px;
+            height: 35px;
+            width: 30px;
+        }
+ .toggle-btn span{
+display:block;
+width:30px;
+height:5px;
+background:red;
+margin:5px  0px;
+}
+#sidebar.active{
+left:1200px;
+}
+        .ib1 {
+            position:absolute;
+        }
+    </style> 
+   
+</head>
+   
+<body style="height: 640px" onload="myFnction()">
+    <form id="form1" runat="server"> 
+            
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">
+                    <asp:Image ID="Image1" runat="server" class="i1" ImageUrl="~/pinterest.png" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button1" runat="server" Height="42px" class="i3" Text="Search" Width="99px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <asp:Image ID="Image2" runat="server" class="i4" ImageUrl="~/home.png" Width="39px" />
+                    <a class="i8" href="home.aspx">Home</a>
+                    <a class="i9" href="searchjob.aspx">Job</a>
+                    <asp:Image ID="Image4" runat="server" BackColor="Black" class="i5" ImageUrl="~/inamge8.jpg" />
+                    <a class="i10" href="network.aspx">Network</a> &nbsp;&nbsp;
+                    <asp:Image ID="Image5" runat="server" class="i6" ImageUrl="~/prof.png" style="margin-left: 0px; top: 37px; left: 1103px; width: 39px; height: 24px;" />
+                    <a class="i11" href="profile.aspx">Profile</a><asp:Image ID="Image3" runat="server" class="i7" Height="40px" ImageUrl="~/job.png" BackColor="Black" />
+
+                    <asp:ImageButton ID="ImageButton1" runat="server" class="ib1" style="background-color: #000000; top: 14px; left: 1171px; height: 21px; width: 35px;" BackColor="#0000CC" ImageUrl="~/noti3.png" OnClick="ImageButton1_Click" />
+                    <asp:TextBox ID="TextBox1" runat="server"  class="i2" Height="51px" placeholder="    Search here..." Width="254px"></asp:TextBox>
+                     
+                </td>
+            </tr>
+        </table>
+              
+        
+              
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+       
+        </asp:ContentPlaceHolder>
+              
+          <div class="toggle-btn" id="ra" onclick="toggleSidebar()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div id="sidebar">
+<ul>
+<li>contact</li>
+<li>about</li>
+<li><a href="Home.html">Home</a></li>
+    <li><a href="Aboutus.aspx">About Us</a></li>
+    <li><a href="Contact_Us.aspx">Contec Us</a></li>
+    <li><a href="search_company.aspx">Search Company</a></li>
+    <li><a href="Interview_prepration.aspx">Interview Prepration</a></li>
+<li><a href="Friend_Request.aspx">Friend Request</a></li>
+<li><a href="changepassword.aspx?UT=client">Change password</a></li>
+<li><a href="logout.aspx">logout</a></li>
+</ul>
+</div>
+              
+    </form>
+    <div class="loader" id="loading">
+</div>
+      <script>
+          function toggleSidebar() {
+              document.getElementById("sidebar").classList.toggle("active");
+        }
+     </script>  
+    <script>
+        var preloader = document.getElementById("loading");
+        function myFnction() {
+            preloader.style.display = 'none';
+        }
+       
+</script>
+     </body>
+     
+</html>

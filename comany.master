@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="comany.master.cs" Inherits="comany" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 105px;
+        }
+        .auto-style2 {
+            height: 48px;
+            background-color: #993300;
+        }
+
+        body {
+            background-image:url(rockt.jpg);
+            background-repeat:no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+   
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">
+                    <asp:Image ID="Image1" runat="server" Height="44px" ImageUrl="~/pinterest.png" Width="103px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label1" runat="server" Font-Size="56px" Text="One Step Toward On Careear"></asp:Label>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #FF0000">
+                    <a href="SearchCanidate.aspx"> Search canidate</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="Add_job.aspx">Add job</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="company_profile.aspx">Company profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="download_resume.aspx"> Download Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a href="Manage_and_Response.aspx">Manage & response</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="INTERVIEW.aspx">Interview Prepration</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="changepassword.aspx?UT=company">ChangePasword</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="logout.aspx">LogOut</a></td>
+            </tr>
+        </table>
+   
+    </div>
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+    </form>
+</body>
+</html>
