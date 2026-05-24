@@ -5,122 +5,237 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title></title>
+    <title>One Step Toward Career</title>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.23/jquery-ui.min.js" type="text/javascript"></script>
-    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/Blitzer/jquery-ui.css"
-        rel="stylesheet" type="text/css" />
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/Blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:wght@300;600&display=swap" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
     <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+
     <style type="text/css">
-        body {
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            height: auto;
-            width: 100%;
-            background-image: url('space.jpg');
-            background-position: center;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #0a0c10;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(24, 95, 165, 0.18) 0%, transparent 70%),
+                url('space.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
             background-position: center;
-            font-family: sams-serif;
-        }
-
-        .change {
-            height: 46px;
-            width: 1297px;
-            background-color: black;
-            opacity: .8;
-        }
-
-        .change1 {
-            color: blue;
-            font-size: 70px;
-            height: 81px;
-            background-color: #0000FF;
-        }
-
-        .auto-style4 {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
             width: 100%;
-            height: 66px;
-            font-size: 18px;
-            color: #0000CC;
+            color: #e8eaf0;
         }
 
-        .search {
-            background: white url('bakbas.png') no-repeat left 50%;
-            padding-left: 18px;
-            border: 1px solid blue;
-            position: absolute;
-            border-radius: 20px;
-            background-size: 50px 50px;
-            top: 14px;
-            left: 848px;
-            height: 55px;
-            width: 243px;
-            font-size: 18px;
+        /* ── NAVBAR ── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            background: rgba(10, 12, 16, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            height: 68px;
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            gap: 20px;
         }
 
-        .but {
-            border: 2px solid red;
-            position: absolute;
-            top: 20px;
-            left: 1136px;
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .navbar-logo {
+            width: 38px;
+            height: 38px;
             border-radius: 10px;
-            background-color: blue;
+            object-fit: cover;
+            border: 1px solid rgba(55, 138, 221, 0.35);
         }
 
-            .but:hover {
-                background-color: green;
-            }
+        .navbar-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 300;
+            font-size: 17px;
+            letter-spacing: 0.01em;
+            color: #e8eaf0;
+            white-space: nowrap;
+        }
 
-        .auto-style10 {
-            color: white;
+        .navbar-title span {
+            color: #378ADD;
+            font-weight: 600;
+        }
+
+        .navbar-spacer {
+            flex: 1;
+        }
+
+        /* ── SEARCH ── */
+        .search-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            width: 16px;
+            height: 16px;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        .search-input {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border: 1px solid rgba(255, 255, 255, 0.11) !important;
+            border-radius: 10px !important;
+            color: #e8eaf0 !important;
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 14px !important;
+            height: 40px !important;
+            width: 260px !important;
+            padding: 0 14px 0 40px !important;
+            transition: border-color 0.2s, background 0.2s !important;
+            outline: none !important;
+        }
+
+        .search-input::placeholder {
+            color: rgba(232, 234, 240, 0.35) !important;
+        }
+
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.09) !important;
+            border-color: rgba(55, 138, 221, 0.5) !important;
+        }
+
+        /* ── SEARCH BUTTON ── */
+        .search-btn {
+            background: #185FA5 !important;
+            border: none !important;
+            border-radius: 10px !important;
+            color: #e8f0fb !important;
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            height: 40px !important;
+            padding: 0 20px !important;
+            cursor: pointer !important;
+            transition: background 0.18s, transform 0.12s !important;
+            white-space: nowrap !important;
+            letter-spacing: 0.01em !important;
+            flex-shrink: 0 !important;
+        }
+
+        .search-btn:hover {
+            background: #378ADD !important;
+            transform: translateY(-1px) !important;
+        }
+
+        .search-btn:active {
+            transform: translateY(0) !important;
+            background: #0C447C !important;
+        }
+
+        /* ── CONTENT AREA ── */
+        .content-area {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 28px 120px;
+        }
+
+        /* ── FOOTER ── */
+        .site-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 12, 16, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site-footer p {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(232, 234, 240, 0.28);
+        }
+
+        .site-footer p span {
+            color: rgba(55, 138, 221, 0.55);
+        }
+
+        /* Override jquery-ui z-index inside page */
+        .ui-autocomplete {
+            z-index: 9999 !important;
         }
     </style>
-
 </head>
 
-<body style="height: 90px; width: 1301px">
-
+<body>
     <form id="form1" runat="server">
-        <div style="height: 664px; width: 1302px">
-            <table class="change">
-                <tr>
-                    <td class="change1">
-                        <asp:Image ID="Image1" runat="server" CssClass="img" ImageUrl="~/pinterest.png" />
-                        &nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style10"><span class="auto-style11">&nbsp;One Step toward Career&nbsp;</span></span>&nbsp;<asp:TextBox ID="TextBox1" runat="server" CssClass="search" placeholder="          Search member..."></asp:TextBox>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="Button1" runat="server" Height="48px" CssClass="but" Text="Search." Width="88px" ForeColor="#FFFFCC" OnClick="Button1_Click" />
-                    </td>
 
-                </tr>
-            </table>
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="Default.aspx" class="navbar-brand">
+                <asp:Image ID="Image1" runat="server" CssClass="navbar-logo" ImageUrl="~/pinterest.png" AlternateText="Logo" />
+                <span class="navbar-title">One Step toward <span>Career</span></span>
+            </a>
 
-            <a href="Default.aspx"></a>
-            <br />
+            <div class="navbar-spacer"></div>
 
+            <div class="search-wrap">
+                <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="search-input" placeholder="Search member..." />
+            </div>
 
+            <asp:Button ID="Button1" runat="server" CssClass="search-btn" Text="Search" OnClick="Button1_Click" />
+        </header>
 
+        <!-- PAGE CONTENT -->
+        <main class="content-area">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+        </main>
 
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>Designed &amp; developed by <span>Vishal</span></p>
+        </footer>
 
-
-            <table class="ff">
-                <tr>
-                    <td style="background-color: #663300" id="footer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<marquee> DESIGNED &amp; DEVELOPED BY: PRIYANSHU RASTOGI</marquee>
-                    </td>
-                </tr>
-            </table>
     </form>
-
 </body>
-
 </html>
